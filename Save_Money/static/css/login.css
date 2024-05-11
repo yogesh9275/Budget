@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+    
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('/static/image/background-image.jpg');
+    background-size: cover;
+    background-position: right;
+    border-radius: 0 10px 10px 0;
+}
+
+.container {
+    display: flex;
+    width: 35%;
+    height: 100vh;
+}
+
+.left-side {
+    flex: 1;
+    padding: 20px;
+    background-color: #EEEEEE; /* Adjust the opacity as needed */
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+h2 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+}
+
+form {
+    text-align: center;
+    margin-top: 100px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: black;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #393E46;
+    background-color: inherit;
+    border-radius: 5px;
+    font-size: 16px;
+    align-self: center;
+}
+
+input[type="submit"] {
+    padding: 10px 20px; /* Adjust padding to create space */
+  margin: 0 10px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #393E46;
+  color: #F7F7F7;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"]:hover {
+        background-color: #F7F7F7;
+        color: #393E46;
+    }
+    
+input[type="submit"]:active {
+        background-color: #F7F7F7;
+        color: #393E46;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .left-side{
+            border-radius: 10px;
+        }
+
+        .left-side{
+            width: 10%;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    }

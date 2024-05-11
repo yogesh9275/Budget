@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Budget Tracker</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?v={{ timestamp }}">
+    </head>
+    <body>
+        <form id="Expense-form">
+            {% csrf_token %}
+            <input type="hidden" id="expense-id" name="id">
+            <table class ="Monthly-Expense">
+                <tr>
+                    <th>Month</th>
+                    <th><input type="month" id="month" name="month"/></th>
+                    <th style='background-color: #393E46; color: white;'>Notes</th>
+                </tr>
+                <tr>
+                    <td>Savings Goals</td>
+                    <td><input type="text" id="saving-goals" name="saving-goals"/></td>
+                    <td rowspan="3"><textarea id="summary" name="summary"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Starting Balance</td>
+                    <td><input type="text" id="start-balance" name="start-balance"/></td>
+                </tr>
+                <tr>
+                    <td>Ending Balance</td>
+                    <td><input type="text" id="end-balance" name="end-balance" /></td>
+                </tr>
+            </table>
+            <table class="Expense-Details">
+                <tr class ="Expense-Columns">
+                    <th>Income/Expenses</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Difference</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td id="category-1" value="Wages">Wages</td>
+                    <td><input type="text" id="expected-1"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-1"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-1"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-1"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-2" value="Other Income">Other Income</td>
+                    <td><input type="text" id="expected-2"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-2"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-2"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-2"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id ="category-3" value="Rent/Mortgage">Rent/Mortgage</td>
+                    <td><input type="text" id="expected-3"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-3"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-3"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-3"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-4" value="Groceries">Groceries</td>
+                    <td><input type="text" id="expected-4"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-4"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-4"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-4"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-5" value="Restaurants">Restaurants</td>
+                    <td><input type="text" id="expected-5"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-5"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-5"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-5"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-6" value="Insurance">Insurance</td>
+                    <td><input type="text" id="expected-6"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-6"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-6"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-6"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-7" value="Utilities">Utilities</td>
+                    <td><input type="text" id="expected-7"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-7"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-7"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-7"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-8" value="Gas">Gas</td>
+                    <td><input type="text" id="expected-8"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-8"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-8"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-8"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-9" value="Entertainment">Entertainment</td>
+                    <td><input type="text" id="expected-9"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-9"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-9"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-9"name="notes-list[]"  ></textarea></td>
+                </tr>
+                <tr>
+                    <td id="category-10" value="Loans">Loans</td>
+                    <td><input type="text" id="expected-10"name="expected-wages[]"/></td>
+                    <td><input type="text" id="actual-10"name="actual-wages[]" /></td>
+                    <td><input type="text" id="difference-10"name="difference-wages[]" /></td>
+                    <td><textarea class='daily-expense' id="notes-10"name="notes-list[]"  ></textarea></td>
+                </tr>
+            </table>
+            <div class="button-container">
+            <button class="custom-button" name="update" type="button" id="save-button" onclick="saveData()">Save</button>
+            <button class="custom-button" name="action" type="button" id="action-button"onclick="showDatePicker()">Action</button>
+            </div>
+            </form>               
+            <div id="datePicker" class="date-picker">
+                <div class="date-picker-content">
+                  <input type="month" id="selectedDate">
+                  <label for="category-select">Category:</label>
+                    <select id="category-select" class="selectdiv">
+                    <option selected> Select Box </option>
+                    <option value="Wages">Wages</option>
+                    <option value="Other Income">Other Income</option>
+                    <option value="Rent/Mortgage">Rent/Mortgage</option>
+                    <option value="Groceries">Groceries</option>
+                    <option value="Restaurants">Restaurants</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Loans">Loans</option>
+                    <!-- Add more options as needed -->
+                    </select>
+                  <button  class="custom-Prompt-button" onclick="getDate()">OK</button>
+                  <button class="custom-Prompt-button" onclick="hideDatePicker()">Cancel</button>
+                  <button  class="custom-Prompt-button" onclick="getDelete()">Delete</button>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="{% static 'js/script.js' %}?v={{ version }}"></script>
+            {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
+    </body>
+</html>

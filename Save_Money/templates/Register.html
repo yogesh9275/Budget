@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Register.css' %}?v={{ timestamp }}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'Image/background-image.jpg' %}?v={{ timestamp }}"> {% endcomment %}
+</head>
+<body>
+<div class="container">
+    <div class="left-side">
+        <h2>Register</h2>
+        <form id="RegisterForm">
+            {% csrf_token %}
+            <label for="email">Email ID:</label><br>
+            <input type="email" id="email" name="email" autocomplete="email" required><br>
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" autocomplete="username" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+            <input type="submit" value="Register" id="Register_button">
+            {% comment %} onclick="sendData()" {% endcomment %}
+        </form>
+    </div>
+    <div class="right-side"></div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/register_script.js' %}?v={{ version }}"></script>
+</body>
+</html>

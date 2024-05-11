@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+
+html, body ,form{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background-color: #DDDDDD;
+}
+table {
+    font-family: 'Anonymous Pro', monospace; 
+    border-collapse: collapse;
+    width: 90%; /* Table takes full width of container */
+    max-width: 900px; /* Limiting maximum width of the table */
+    margin: auto; /* Centering the table */
+    margin-bottom: 20px; 
+    background-color: #F7F7F7;
+  }
+  .Monthly-Expense{
+    margin-top: 30px;
+
+  }
+  
+  td, th {
+    font-family: 'Anonymous Pro', monospace; 
+    border: 1px solid #222831;
+    text-align: left;
+    text-align: center;
+    padding: 5px;
+  }
+
+  textarea {
+    font-family: 'Anonymous Pro', monospace; 
+    width: 100%; /* Input fields take full width of cell */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    height: 150px; /* Adjust height as needed */
+    resize: none;
+    background-color: inherit;
+    border: none; /* Hide the border */
+    outline: none; /* Hide the outline when focused */
+  }
+  input[type="text"], input[type="month"]{
+    font-family: 'Anonymous Pro', monospace; 
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    height: 40px;
+    border: none; /* Hide the border */
+    outline: none; /* Hide the outline when focused */
+    background-color: inherit;
+  }
+  td:nth-child(1), th:nth-child(1){
+    background-color: #222831; /* Change color as needed */
+    color: #EEEEEE; 
+    text-align: center;
+}
+.daily-expense{
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    height: 40px;
+    border: none; /* Hide the border */
+    outline: none; /* Hide the outline when focused */
+    background-color: inherit;
+}
+
+.Expense-Columns{
+    background-color: #222831; /* Change color as needed */
+    color: #EEEEEE; 
+    text-align: center;
+}
+
+/* Styling for the button container */
+.button-container {
+  display: flex; /* Use flexbox to align items */
+  justify-content: center;
+  max-width: inherit; 
+}
+
+.crud-prompt{ /* Centering horizontally */
+  margin-left: 10px; /* Move the action button to the right */
+  margin-top: 100px;
+}
+
+.custom-button {
+  font-family: 'Anonymous Pro', monospace; 
+  padding: 10px 20px; /* Adjust padding to create space */
+  margin: 0 10px 10px;
+  border: 2px solid #222831;
+  border-radius: 10px;
+  background-color: #222831;
+  color: #EEEEEE;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #EEEEEE;
+    color: #222831;
+}
+
+.custom-button:active {
+    background-color: #222831;
+    color: #222831;
+}
+
+.date-picker {
+  font-family: 'Anonymous Pro', monospace; 
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #EEEEEE;
+  padding: 40px;
+  border: 1px solid #ccc;
+}
+
+
+.date-picker-content {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-picker button {
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+.custom-Prompt-button {
+  font-family: 'Anonymous Pro', monospace; 
+  padding: 10px 10px;
+  border: 2px solid #222831;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #222831;
+  color: #EEEEEE;
+  text-align: center;
+  text-decoration: none;
+  display: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.custom-Prompt-button:hover {
+  background-color: #EEEEEE;
+  color: #222831;
+}
+
+.custom-Prompt-button:active {
+  background-color: #EEEEEE;
+  color: #EEEEEE;
+}
+.negative {
+  color: red; /* Default color for negative values */
+}
+.positive {
+  color: green; /* Color for positive values */
+}
+
+.selectdiv {
+  font-family: 'Anonymous Pro', monospace; 
+  position: relative;
+  /* Don't really need this just for demo styling */
+  float: left;
+  min-width: 100px;
+  margin: 20px 3%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+}

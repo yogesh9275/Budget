@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}?v={{ timestamp }}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'Image/background-image.jpg' %}?v={{ timestamp }}"> {% endcomment %}
+</head>
+<body>
+<div class="container">
+    <div class="left-side">
+        <h2>Login</h2>
+        <form id="loginForm">
+            {% csrf_token %}
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" autocomplete="username" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <input type="submit" value="Login" id="login_button">
+            {% comment %} onclick="sendData()" {% endcomment %}
+        </form>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/login.js' %}?v={{ version }}"></script>
+</body>
+</html>

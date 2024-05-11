@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}?v={{ timestamp }}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'Image/background-image.jpg' %}?v={{ timestamp }}"> {% endcomment %}
+</head>
+<body>
+    <div class="overlay">
+        <div class="transparent-box">
+            <p class="line-1 anim-typewriter">This is a Budget Planner.</p>
+            <button class="custom-button" type="button" id="loginButton">Login</button>
+            <button class="custom-button" type="button" id="RegisterButton">Register</button>
+        </div>
+    </div>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/home.js' %}?v={{ version }}"></script>
+</body>
+</html>
