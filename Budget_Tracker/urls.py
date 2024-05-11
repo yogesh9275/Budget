@@ -19,6 +19,7 @@ from django.urls import path
 from Save_Money import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponseNotFound
 urlpatterns = [
     path('', views.home, name='home'),
     path('Expense/',views.manage_expenses ,name='Expense'),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('register/',views.Register, name='register'),
     path('login/',views.login, name='login'),
     path('admin/', admin.site.urls),
+    path('favicon.ico', lambda request: HttpResponseNotFound())
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
